@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Dia } from '../interfaces/dias.interface';
 import { Profesor } from '../interfaces/profesor.interface';
 
 @Injectable({
@@ -8,16 +7,6 @@ import { Profesor } from '../interfaces/profesor.interface';
 export class DataProvidersService {
 
   constructor() { }
-
-  dias: Dia[] = [
-    {nombre:'Lunes', codigo: 1},
-    {nombre:'Martes', codigo: 2},
-    {nombre:'Miercoles', codigo: 3},
-    {nombre:'Jueves', codigo: 4},
-    {nombre:'Viernes', codigo: 5},
-    {nombre:'Sabado', codigo: 6},
-    {nombre:'Domingo', codigo: 7},
-  ]
   
   profesores: Profesor[] = [
     {nombre:'Carlos Loria'},
@@ -25,7 +14,16 @@ export class DataProvidersService {
     {nombre:'Olger Achio'},
     {nombre:'Juan de Dios'},
   ]
-
-
-
+  
+  NRCs: string[] = [
+    '40090',
+    '40080',
+    '40060',
+    '40070',
+    '40050',
+  ]
+  
+  codigosDeCursos: string[] = [
+    'EIF411'
+  ]
 }

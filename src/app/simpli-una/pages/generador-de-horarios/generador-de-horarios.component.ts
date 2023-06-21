@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataProvidersService } from '../../services/data-providers.service';
 
 @Component({
   selector: 'app-generador-de-horarios',
