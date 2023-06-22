@@ -7,13 +7,15 @@ import { GeneradorDeHorariosComponent } from './pages/generador-de-horarios/gene
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TablaCursosRegistradosComponent } from './components/tabla-cursos-registrados/tabla-cursos-registrados.component';
+import { TabViewHorariosGeneradosComponent } from './components/tab-view-horarios-generados/tab-view-horarios-generados.component';
 
 
 @NgModule({
   declarations: [
     InicioComponent,
     GeneradorDeHorariosComponent,
-    TablaCursosRegistradosComponent
+    TablaCursosRegistradosComponent,
+    TabViewHorariosGeneradosComponent
   ],
   imports: [
     CommonModule,

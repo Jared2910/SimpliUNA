@@ -1,0 +1,5 @@
+<p-tabView [(activeIndex)]="activeIndex2" [scrollable]="true">
+    <p-tabPanel *ngFor="let tab of scrollableTabs;" [header]="tab.title">
+        <p>{{tab.content}}</p>
+    </p-tabPanel>
+</p-tabView>
