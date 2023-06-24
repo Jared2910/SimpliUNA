@@ -52,15 +52,20 @@ export class CursosRegistradosService {
   ]
 
   constructor() { }
+
+  get getCursos(){
+    return [...this.cursos];
+  }
+
+  agregarCurso(curso: Curso){
+    this.cursos.push(curso);
+  }
+
+  eliminarCurso(NRC: string){
+    this.cursos.forEach((curso,index)=>{
+      if(curso.NRC == NRC){
+        this.cursos.splice(index,1);
+      }
+    })
+  }
 }
-
-/*
-    NRC: NRC;
-    nombre: String;
-    codigo: string;
-    dias: Dia[];
-    hora_entrada: Date[];
-    hora_salida: Date[];
-    profesor: Profesor;
-
-*/

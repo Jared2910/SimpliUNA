@@ -1,9 +1,9 @@
 <p class="text-7xl text-color-secondary m-0 mb-2 animate__animated animate__fadeIn">Cursos Agregados</p>
-<button pButton pRipple type="button" icon="pi pi-plus" label="Agregar"
-  class="p-button-outlined p-button-rounded my-3 animate__animated animate__fadeInDown">
-</button>
 
-<p-table [value]="this.cursosRegistrados.cursos" styleClass="p-datatable-striped shadow-5 animate__animated animate__fadeIn">
+<app-agregar-curso-dialog></app-agregar-curso-dialog>
+
+<p-table [value]="this.cursosRegistrados.cursos"
+  styleClass="p-datatable-striped shadow-5 animate__animated animate__fadeIn">
   <ng-template pTemplate="header">
     <tr>
       <th>NRC</th>
@@ -17,7 +17,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-curso>
     <tr>
-      <td>{{curso.NRC }}</td>
+      <td>{{curso.NRC}}</td>
       <td>{{curso.nombre}}</td>
       <td>{{curso.codigo}}</td>
       <td>{{curso.profesor.nombre}}</td>
@@ -32,7 +32,7 @@
         </div>
       </td>
       <td>
-        <button type="button" pButton pRipple icon="pi pi-trash"
+        <button type="button" pButton pRipple icon="pi pi-trash" (click)="borrarCursoRegistrado(curso.NRC)"
           class="p-button-danger p-button-outlined p-button-rounded"></button>
       </td>
     </tr>

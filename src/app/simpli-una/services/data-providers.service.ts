@@ -24,6 +24,14 @@ export class DataProvidersService {
   ]
   
   codigosDeCursos: string[] = [
-    'EIF411'
+    'EIF411',
   ]
+
+  nombreDeCursos: string[] = [
+    'Programación IV',
+    'Programación III',
+    'Ingeniería de Sistemas III',
+    'Organización y su entorno',
+  ]
+
 }

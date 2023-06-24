@@ -1,1 +1,26 @@
-<p>tabla-horario-generado works!</p>
+<p-table [value]="horario" [tableStyle]="{'min-width': '50rem'}" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>NRC</th>
+        <th>Curso</th>
+        <th>Código</th>
+        <th>Profesor</th>
+        <th>Horario</th>
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-curso>
+      <tr>
+        <td>{{curso.NRC}}</td>
+        <td>{{curso.nombre}}</td>
+        <td>{{curso.codigo}}</td>
+        <td>{{curso.profesor.nombre }}</td>
+        <td>
+          <div class="grid col" *ngFor="let dia of curso.dias; let i = index">
+            {{dia}} <i class="pi pi-arrow-right mx-3 mt-1"></i> {{curso.hora_entrada[i] | date: 'HH:mm'}} -
+            {{curso.hora_salida[i] | date: 'HH:mm'}}
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>

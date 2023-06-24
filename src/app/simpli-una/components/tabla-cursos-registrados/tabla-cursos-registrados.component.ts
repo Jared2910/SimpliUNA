@@ -14,4 +14,8 @@ export class TablaCursosRegistradosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  borrarCursoRegistrado(NRC: string){
+    this.cursosRegistrados.eliminarCurso(NRC)
+  }
+
 }

@@ -16,7 +16,7 @@ export class TabViewHorariosGeneradosComponent implements OnInit {
 
   ngOnInit(): void {
     this.msgs1 = [
-      {severity:'info', summary:'No se pudo generar ningun horario, '},
+      {severity:'info', summary:'No se ha podido generar ningún horario'},
     ];
 
 

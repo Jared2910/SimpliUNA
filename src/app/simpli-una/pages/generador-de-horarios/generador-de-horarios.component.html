@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+
 <div class="grid">
     <div class="col">
         <p class="text-primary text-7xl my-0 animate__animated animate__fadeIn">SimpliUNA</p>
@@ -11,7 +13,7 @@
     </div>
 </div>
 <p-divider align="center">
-    <p-button label="Generar Horarios" pRipple icon="pi pi-search" styleClass="p-button-outlined p-button-rounded"></p-button>
+    <p-button label="Generar Horarios" (onClick)="generarHorarios()" pRipple icon="pi pi-search" styleClass="p-button-outlined p-button-rounded"></p-button>
 </p-divider>
 
 <div class="grid surface-50 py-5 my-5">

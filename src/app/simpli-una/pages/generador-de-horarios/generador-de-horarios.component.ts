@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataProvidersService } from '../../services/data-providers.service';
+import { HorariosGeneradosService } from '../../services/horarios-generados.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-generador-de-horarios',
@@ -9,9 +10,23 @@ import { DataProvidersService } from '../../services/data-providers.service';
 })
 export class GeneradorDeHorariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private horariosGeneradosService: HorariosGeneradosService,
+     private messageService: MessageService) { }
 
   ngOnInit(): void {
+  }
+
+  showInfo() {
+    this.messageService.add({severity:'info', summary: 'Info', detail: 'Por favor, agregue algunos cursos a la lista'});
+}
+
+  generarHorarios(){
+    this.horariosGeneradosService.resetData();
+    let exito = this.horariosGeneradosService.generarHorarios();
+
+    if(!exito){
+      this.showInfo()
+    }
   }
 
 }

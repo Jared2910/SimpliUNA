@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TablaCursosRegistradosComponent } from './components/tabla-cursos-registrados/tabla-cursos-registrados.component';
 import { TabViewHorariosGeneradosComponent } from './components/tab-view-horarios-generados/tab-view-horarios-generados.component';
 import { TablaHorarioGeneradoComponent } from './components/tabla-horario-generado/tabla-horario-generado.component';
+import { AgregarCursoDialogComponent } from './components/agregar-curso-dialog/agregar-curso-dialog.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TablaHorarioGeneradoComponent } from './components/tabla-horario-genera
     GeneradorDeHorariosComponent,
     TablaCursosRegistradosComponent,
     TabViewHorariosGeneradosComponent,
-    TablaHorarioGeneradoComponent
+    TablaHorarioGeneradoComponent,
+    AgregarCursoDialogComponent
   ],
   imports: [
     CommonModule,

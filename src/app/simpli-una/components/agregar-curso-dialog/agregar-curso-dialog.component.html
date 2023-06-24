@@ -1,0 +1,75 @@
+<button (click)="show()" pButton pRipple type="button" icon="pi pi-plus" label="Agregar"
+    class="p-button-outlined p-button-rounded my-3 animate__animated animate__fadeInDown">
+</button>
+
+<p-dialog header="Agregar Curso" [(visible)]="mostrarDialog" [modal]="true" styleClass="w-6"
+    [draggable]="false" [resizable]="true">
+
+    <form autocomplete="off" [formGroup]="agregarCursoFormulario">
+
+
+        <p-divider align="center">
+            <div class="inline-flex align-items-center">
+                <i class="pi pi-book mr-2"></i>
+            </div>
+        </p-divider>
+
+        <div class="formgrid grid">
+            <div class="field col-12 lg:col-6">
+                <h5 class="m-0 mb-2" for="NRC">NRC</h5>
+                    <p-autoComplete styleClass="w-full" formControlName="codigo" appendTo="body"
+                    [(ngModel)]="selectedNRC" [suggestions]="filtered"
+                    (completeMethod)="filtrar($event, this.dataProvide.NRCs)" [dropdown]="true">
+                    <ng-template let-nrc pTemplate="item">
+                        {{nrc}}
+                    </ng-template>
+                </p-autoComplete>
+            </div>
+
+            <div class="field col-12 lg:col-6">
+                <h5 class="m-0 mb-2" for="NOMBRECURSO">Nombre del Curso</h5>
+                <p-autoComplete styleClass="w-full" formControlName="codigo" appendTo="body"
+                    [(ngModel)]="selectedNombre" [suggestions]="filtered"
+                    (completeMethod)="filtrar($event, this.dataProvide.nombreDeCursos)" [dropdown]="true">
+                    <ng-template let-nombre pTemplate="item">
+                        {{nombre}}
+                    </ng-template>
+                </p-autoComplete>
+            </div>
+
+            <div class="field col-12 lg:col-6">
+                <h5 class="m-0 mb-2" for="CODIGOCURSO">Código del Curso</h5>
+                <p-autoComplete styleClass="w-full" formControlName="codigo" appendTo="body"
+                    [(ngModel)]="selectedCodigoDeCurso" [suggestions]="filtered"
+                    (completeMethod)="filtrar($event, this.dataProvide.codigosDeCursos)" [dropdown]="true">
+                    <ng-template let-codigo pTemplate="item">
+                        {{codigo}}
+                    </ng-template>
+                </p-autoComplete>
+            </div>
+
+            <div class="field col-12 lg:col-6">
+
+                <h5 class="m-0 mb-2" for="NOMBREPROFESOR">Nombre del Profesor(a)</h5>
+                <p-autoComplete styleClass="w-full" formControlName="profesor" appendTo="body"
+                    [(ngModel)]="selectedProfesor" [suggestions]="filtered"
+                    (completeMethod)="filtrar($event, this.dataProvide.profesores, 'nombre')" field="nombre"
+                    [dropdown]="true">
+                    <ng-template let-profesor pTemplate="item">
+                        {{profesor.nombre}}
+                    </ng-template>
+                </p-autoComplete>
+
+            </div>
+        </div>
+
+        <p-divider align="center">
+            <div class="inline-flex align-items-center">
+                <i class="pi pi-calendar mr-2"></i>
+            </div>
+        </p-divider>
+
+
+    </form>
+
+</p-dialog>

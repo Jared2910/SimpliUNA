@@ -8,7 +8,7 @@
 <ng-template #mostrarHorarios>
 
     <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
-        <p-tabPanel *ngFor="let horario of this.horariosGeneradosService.horariosGenerados; let i = index" header="Horario {{i}}">
+        <p-tabPanel *ngFor="let horario of this.horariosGeneradosService.horariosGenerados; let i = index" header="Horario {{i+1}}">
             <app-tabla-horario-generado [horario]="horario"></app-tabla-horario-generado>
         </p-tabPanel>
     </p-tabView>
