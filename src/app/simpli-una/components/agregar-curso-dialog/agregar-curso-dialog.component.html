@@ -1,9 +1,11 @@
+<p-toast></p-toast>
+
 <button (click)="show()" pButton pRipple type="button" icon="pi pi-plus" label="Agregar"
     class="p-button-outlined p-button-rounded my-3 animate__animated animate__fadeInDown">
 </button>
 
-<p-dialog header="Agregar Curso" [(visible)]="mostrarDialog" [modal]="true" styleClass="w-6"
-    [draggable]="false" [resizable]="true">
+<p-dialog header="Agregar Curso" [(visible)]="mostrarDialog" [modal]="true" styleClass="w-7" [draggable]="false"
+    [resizable]="true">
 
     <form autocomplete="off" [formGroup]="agregarCursoFormulario">
 
@@ -17,9 +19,9 @@
         <div class="formgrid grid">
             <div class="field col-12 lg:col-6">
                 <h5 class="m-0 mb-2" for="NRC">NRC</h5>
-                    <p-autoComplete styleClass="w-full" formControlName="codigo" appendTo="body"
-                    [(ngModel)]="selectedNRC" [suggestions]="filtered"
-                    (completeMethod)="filtrar($event, this.dataProvide.NRCs)" [dropdown]="true">
+                <p-autoComplete styleClass="w-full" formControlName="NRC" appendTo="body" [(ngModel)]="selectedNRC"
+                    [suggestions]="filtered" (completeMethod)="filtrar($event, this.dataProvide.NRCs)"
+                    [dropdown]="true">
                     <ng-template let-nrc pTemplate="item">
                         {{nrc}}
                     </ng-template>
@@ -28,7 +30,7 @@
 
             <div class="field col-12 lg:col-6">
                 <h5 class="m-0 mb-2" for="NOMBRECURSO">Nombre del Curso</h5>
-                <p-autoComplete styleClass="w-full" formControlName="codigo" appendTo="body"
+                <p-autoComplete styleClass="w-full" formControlName="nombre" appendTo="body"
                     [(ngModel)]="selectedNombre" [suggestions]="filtered"
                     (completeMethod)="filtrar($event, this.dataProvide.nombreDeCursos)" [dropdown]="true">
                     <ng-template let-nombre pTemplate="item">
@@ -69,7 +71,88 @@
             </div>
         </p-divider>
 
+        <div class="formgrid grid">
+
+            <div class="field col-12 md:col-4 lg:col-3">
+                <h5 class="m-0 mb-2" for="DIAS">Dia</h5>
+                <p-dropdown appendTo="body" styleClass="w-full" [formControl]="nuevoDia" [options]="listaDias"
+                    [(ngModel)]="selectedDia" placeholder="Seleccione un Dia"></p-dropdown>
+            </div>
+
+            <div class="field col-12 md:col-4 lg:col-4">
+                <h5 class="m-0 mb-2" for="HORAENTRADA">Hora de entrada</h5>
+                <p-calendar appendTo="body" styleClass="w-full" [formControl]="nuevoHoraDeEntrada"
+                    [(ngModel)]="horaDeEntrada" [timeOnly]="true" [hourFormat]="'24'"
+                    inputId="HORAENTRADA"></p-calendar>
+            </div>
+
+            <div class="field col-12 md:col-4 lg:col-4">
+                <h5 class="m-0 mb-2" for="HORASALIDA">Hora de salida</h5>
+                <p-calendar appendTo="body" styleClass="w-full" [formControl]="nuevoHoraDeSalida"
+                    [(ngModel)]="horaDeSalida" [timeOnly]="true" [hourFormat]="'24'" inputId="HORASALIDA"></p-calendar>
+            </div>
+
+            <div class="field col-12 md:col-12 lg:col-1">
+                <h5 class="m-0 mb-2"></h5>
+                <button (click)="agregarHorario()" pButton pRipple type="button" icon="pi pi-plus"
+                    class=" mx-auto mb-0 p-button-outlined w-full mt-3">
+                </button>
+            </div>
+
+        </div>
+
+        <div class="grid">
+            <div class="col">
+
+                <p-messages *ngIf="diasArr.length === 0 ; else mostrarHorarios" [closable]="false" [enableService]="false"
+                    [(value)]="msgs1"></p-messages>
+
+
+                <ng-template #mostrarHorarios>
+
+                    <p-table [value]="diasArr.controls"
+                        styleClass="p-datatable-striped shadow-5 animate__animated animate__fadeIn">
+
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Dia(s)</th>
+                                <th>Hora de Entrada</th>
+                                <th>Hora de Salida</th>
+                                <th style="width: 5rem"></th>
+                            </tr>
+                        </ng-template>
+
+                        <ng-template pTemplate="body" let-i="rowIndex">
+                            <tr>
+                                <td>{{diasArr.controls[i].value }}</td>
+                                <td>{{horaEntradaArr.controls[i].value | date: 'HH:mm'}}</td>
+                                <td>{{horaSalidaArr.controls[i].value | date: 'HH:mm'}}</td>
+
+                                <td>
+                                    <button type="button" pButton pRipple icon="pi pi-trash"
+                                        class="p-button-danger p-button-outlined p-button-rounded"
+                                        (click)="borrarHorario(i)"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+
+                    </p-table>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="mt-2 flex justify-content-end">
+            <button 
+                type="button"
+                pButton 
+                pRipple 
+                icon="pi pi-check"
+                class="animate__animated animate__fadeInDown p-button-outlined p-button-rounded" 
+                (click)="guardarCurso()" 
+                label="Guardar">
+            </button>
+        </div>
+
 
     </form>
-
 </p-dialog>

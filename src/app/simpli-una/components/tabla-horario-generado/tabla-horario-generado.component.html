@@ -6,7 +6,6 @@
         <th>Código</th>
         <th>Profesor</th>
         <th>Horario</th>
-        <th style="width: 5rem"></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-curso>
@@ -17,8 +16,8 @@
         <td>{{curso.profesor.nombre }}</td>
         <td>
           <div class="grid col" *ngFor="let dia of curso.dias; let i = index">
-            {{dia}} <i class="pi pi-arrow-right mx-3 mt-1"></i> {{curso.hora_entrada[i] | date: 'HH:mm'}} -
-            {{curso.hora_salida[i] | date: 'HH:mm'}}
+            {{dia}} <i class="pi pi-arrow-right mx-3 mt-1"></i> {{curso.horasDeEntrada[i] | date: 'HH:mm'}} -
+            {{curso.horasDeSalida[i] | date: 'HH:mm'}}
           </div>
         </td>
       </tr>

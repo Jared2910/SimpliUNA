@@ -60,8 +60,8 @@ export class HorariosGeneradosService {
 
     horario.forEach(curso => {
       dias = curso.dias;
-      curso.hora_entrada.forEach(horaEntrada => horasDeEntrada.push(new Date(horaEntrada)));
-      curso.hora_salida.forEach(horaSalida => horasDeSalida.push(new Date(horaSalida)));
+      curso.horasDeEntrada.forEach(horaEntrada => horasDeEntrada.push(new Date(horaEntrada)));
+      curso.horasDeSalida.forEach(horaSalida => horasDeSalida.push(new Date(horaSalida)));
 
       dias.forEach((dia, indice) => {
         if (HorarioTemporal[dia] === undefined) {
@@ -70,10 +70,10 @@ export class HorariosGeneradosService {
           tuplasEntradasSalidas = HorarioTemporal[dia];
 
           tuplasEntradasSalidas.forEach((tupla, index) => {
-            horaEntrada1 = new Date(this.fechaReferencia.getTime() + new Date(curso.hora_entrada[index]).getTime() % 86400000);
+            horaEntrada1 = new Date(this.fechaReferencia.getTime() + new Date(curso.horasDeEntrada[index]).getTime() % 86400000);
             horaEntrada2 = new Date(this.fechaReferencia.getTime() + new Date(tupla[0]).getTime() % 86400000);
 
-            horaSalida1 = new Date(this.fechaReferencia.getTime() + new Date(curso.hora_salida[index]).getTime() % 86400000);
+            horaSalida1 = new Date(this.fechaReferencia.getTime() + new Date(curso.horasDeSalida[index]).getTime() % 86400000);
             horaSalida2 = new Date(this.fechaReferencia.getTime() + new Date(tupla[1]).getTime() % 86400000);
 
             if (horaEntrada1.getTime() > horaEntrada2.getTime() && horaEntrada1.getTime() < horaSalida2.getTime()

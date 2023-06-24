@@ -17,11 +17,11 @@ export class CursosRegistradosService {
         Dia.Lunes,
         Dia.Martes
       ],
-      hora_entrada: [
+      horasDeEntrada: [
         new Date("2023-02-05T19:00:00.540Z"),
         new Date("2023-02-05T19:00:00.678Z")
       ],
-      hora_salida: [
+      horasDeSalida: [
         new Date("2023-02-05T20:20:00.500Z"),
         new Date("2023-02-05T20:20:00.462Z")
       ],
@@ -36,12 +36,12 @@ export class CursosRegistradosService {
         Dia.Martes,
         Dia.Miercoles
       ],
-      hora_entrada: [
+      horasDeEntrada: [
         new Date("2023-02-05T19:00:00.540Z"),
         new Date("2023-02-05T19:00:00.678Z"),
         new Date("2023-02-05T19:00:00.678Z")
       ],
-      hora_salida: [
+      horasDeSalida: [
         new Date("2023-02-05T20:20:00.500Z"),
         new Date("2023-02-05T19:00:00.678Z"),
         new Date("2023-02-05T20:20:00.462Z")
@@ -51,7 +51,11 @@ export class CursosRegistradosService {
 
   ]
 
-  constructor() { }
+  constructor() {
+
+    console.log(this.getCursos)
+
+  }
 
   get getCursos(){
     return [...this.cursos];
@@ -59,6 +63,7 @@ export class CursosRegistradosService {
 
   agregarCurso(curso: Curso){
     this.cursos.push(curso);
+    console.log(this.cursos)
   }
 
   eliminarCurso(NRC: string){

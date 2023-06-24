@@ -6,7 +6,7 @@ export interface Curso {
     nombre: string;
     codigo: string;
     dias: string[];
-    hora_entrada: Date[];
-    hora_salida: Date[];
+    horasDeEntrada: Date[];
+    horasDeSalida: Date[];
     profesor: Profesor;
 }

@@ -11,20 +11,20 @@ import { MessageService } from 'primeng/api';
 export class GeneradorDeHorariosComponent implements OnInit {
 
   constructor(private horariosGeneradosService: HorariosGeneradosService,
-     private messageService: MessageService) { }
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
 
   showInfo() {
-    this.messageService.add({severity:'info', summary: 'Info', detail: 'Por favor, agregue algunos cursos a la lista'});
-}
+    this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Por favor, agregue algunos cursos a la lista' });
+  }
 
-  generarHorarios(){
+  generarHorarios() {
     this.horariosGeneradosService.resetData();
     let exito = this.horariosGeneradosService.generarHorarios();
 
-    if(!exito){
+    if (!exito) {
       this.showInfo()
     }
   }
