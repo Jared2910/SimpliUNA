@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HorariosGeneradosService } from '../../services/horarios-generados.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-tab-view-horarios-generados',
@@ -7,16 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class TabViewHorariosGeneradosComponent implements OnInit {
 
 
-  activeIndex1: number = 0;
+  activeIndex: number = 0;
+  msgs1!: Message[];
 
-  activeIndex2: number = 0;
-
-  scrollableTabs: any[] = Array.from({ length: 10 }, (_, i) => ({ title: `Tab ${i + 1}`, content: `Tab ${i + 1} Content` }));
-
-
-  constructor() { }
+  constructor(public horariosGeneradosService: HorariosGeneradosService) { }
 
   ngOnInit(): void {
+    this.msgs1 = [
+      {severity:'info', summary:'No se pudo generar ningun horario, '},
+    ];
+
+
   }
 
 }
