@@ -1,0 +1,16 @@
+
+<p class="text-7xl text-color-secondary m-0 mb-2 animate__animated animate__fadeIn">Horarios Generados</p>
+
+
+<p-messages *ngIf="this.horariosGeneradosService.horariosGenerados.length === 0 ; else mostrarHorarios" [closable]="false" [(value)]="msgs1" [enableService]="false"></p-messages>
+
+
+<ng-template #mostrarHorarios>
+
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+        <p-tabPanel *ngFor="let horario of this.horariosGeneradosService.horariosGenerados; let i = index" header="Horario {{i+1}}">
+            <app-tabla-horario-generado [horario]="horario"></app-tabla-horario-generado>
+        </p-tabPanel>
+    </p-tabView>
+
+</ng-template>
