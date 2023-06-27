@@ -10,43 +10,130 @@ export class CursosRegistradosService {
   public cursos: Curso[] = [
 
     {
-      NRC: '40090',
-      nombre: 'Desarrollo de Plataformas Moviles',
-      codigo: 'EIF411',
+      NRC: '50079',
+      nombre: 'Programación I',
+      codigo: 'EIF201',
       dias: [
         Dia.Lunes,
-        Dia.Martes
+        Dia.Jueves
       ],
       horasDeEntrada: [
-        new Date("2023-02-05T19:00:00.540Z"),
-        new Date("2023-02-05T19:00:00.678Z")
+        new Date("2023-08-26T14:00:00.000Z"),
+        new Date("2023-08-26T14:00:00.000Z")
       ],
       horasDeSalida: [
-        new Date("2023-02-05T20:20:00.500Z"),
-        new Date("2023-02-05T20:20:00.462Z")
+        new Date("2023-08-26T15:40:00.000Z"),
+        new Date("2023-08-26T15:40:00.000Z")
       ],
-      profesor: {nombre:'Carlos Loria'}
+      profesor: {nombre:'Santiago Camaño'}
     },
     {
-      NRC: '40090',
-      nombre: 'Desarrollo de Plataformas Moviles',
-      codigo: 'EIF411',
+      NRC: '50084',
+      nombre: 'Programación I',
+      codigo: 'EIF201',
       dias: [
         Dia.Lunes,
-        Dia.Martes,
-        Dia.Miercoles
+        Dia.Jueves
       ],
       horasDeEntrada: [
-        new Date("2023-02-05T19:00:00.540Z"),
-        new Date("2023-02-05T19:00:00.678Z"),
-        new Date("2023-02-05T19:00:00.678Z")
+        new Date("2023-08-26T16:00:00.000Z"),
+        new Date("2023-08-26T16:00:00.000Z")
       ],
       horasDeSalida: [
-        new Date("2023-02-05T20:20:00.500Z"),
-        new Date("2023-02-05T19:00:00.678Z"),
-        new Date("2023-02-05T20:20:00.462Z")
+        new Date("2023-08-26T17:40:00.000Z"),
+        new Date("2023-08-26T17:40:00.000Z")
       ],
-      profesor: {nombre:'Carlos Loria'}
+      profesor: {nombre:'Santiago Camaño'}
+    },
+    {
+      NRC: '50085',
+      nombre: 'Programación I',
+      codigo: 'EIF201',
+      dias: [
+        Dia.Lunes,
+        Dia.Jueves
+      ],
+      horasDeEntrada: [
+        new Date("2023-08-26T19:00:00.000Z"),
+        new Date("2023-08-26T19:00:00.000Z")
+      ],
+      horasDeSalida: [
+        new Date("2023-08-26T20:40:00.000Z"),
+        new Date("2023-08-26T20:40:00.000Z")
+      ],
+      profesor: {nombre:'Santiago Camaño'}
+    },
+    {
+      NRC: '50221',
+      nombre: 'Estructuras De Datos',
+      codigo: 'EIF207',
+      dias: [
+        Dia.Martes,
+        Dia.Viernes
+      ],
+      horasDeEntrada: [
+        new Date("2023-08-26T16:00:00.000Z"),
+        new Date("2023-08-26T16:00:00.000Z")
+      ],
+      horasDeSalida: [
+        new Date("2023-08-26T17:40:00.000Z"),
+        new Date("2023-08-26T17:40:00.000Z")
+      ],
+      profesor: {nombre:'Georges Alfaro'}
+    },
+    {
+      NRC: '50222',
+      nombre: 'Estructuras De Datos',
+      codigo: 'EIF207',
+      dias: [
+        Dia.Martes,
+        Dia.Viernes
+      ],
+      horasDeEntrada: [
+        new Date("2023-08-26T19:00:00.000Z"),
+        new Date("2023-08-26T19:00:00.000Z")
+      ],
+      horasDeSalida: [
+        new Date("2023-08-26T20:40:00.000Z"),
+        new Date("2023-08-26T20:40:00.000Z")
+      ],
+      profesor: {nombre:'Georges Alfaro'}
+    },
+    {
+      NRC: '50138',
+      nombre: 'Arquitectura De Computadoraes',
+      codigo: 'EIF205',
+      dias: [
+        Dia.Martes,
+        Dia.Viernes
+      ],
+      horasDeEntrada: [
+        new Date("2023-08-27T00:00:00.000Z"),
+        new Date("2023-08-27T00:00:00.000Z")
+      ],
+      horasDeSalida: [
+        new Date("2023-08-27T01:40:00.000Z"),
+        new Date("2023-08-27T01:40:00.000Z")
+      ],
+      profesor: {nombre:'Cesar Valverde'}
+    },
+    {
+      NRC: '50140',
+      nombre: 'Arquitectura De Computadoraes',
+      codigo: 'EIF205',
+      dias: [
+        Dia.Martes,
+        Dia.Viernes
+      ],
+      horasDeEntrada: [
+        new Date("2023-08-27T00:00:00.000Z"),
+        new Date("2023-08-27T00:00:00.000Z")
+      ],
+      horasDeSalida: [
+        new Date("2023-08-27T01:40:00.000Z"),
+        new Date("2023-08-27T01:40:00.000Z")
+      ],
+      profesor: {nombre:'Henry Guevara'}
     },
 
   ]

@@ -1,11 +1,17 @@
-<p-table [value]="horario" [tableStyle]="{'min-width': '50rem'}" styleClass="p-datatable-striped">
+<p-table 
+  [value]="horario" 
+  [tableStyle]="{'min-width': '50rem'}"
+  [rowHover]="true"
+  [scrollable]="true"
+  [columns]="cols"
+  [resizableColumns]="true" 
+  columnResizeMode="expand"
+  styleClass="p-datatable-striped">
     <ng-template pTemplate="header">
       <tr>
-        <th>NRC</th>
-        <th>Curso</th>
-        <th>Código</th>
-        <th>Profesor</th>
-        <th>Horario</th>
+        <th *ngFor="let col of cols">
+          {{col.header}}
+        </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-curso>
@@ -15,9 +21,13 @@
         <td>{{curso.codigo}}</td>
         <td>{{curso.profesor.nombre }}</td>
         <td>
+          <div class="grid col" *ngFor="let dia of curso.dias;">
+            {{dia}}
+          </div>
+        </td>
+        <td>
           <div class="grid col" *ngFor="let dia of curso.dias; let i = index">
-            {{dia}} <i class="pi pi-arrow-right mx-3 mt-1"></i> {{curso.horasDeEntrada[i] | date: 'HH:mm'}} -
-            {{curso.horasDeSalida[i] | date: 'HH:mm'}}
+            {{curso.horasDeEntrada[i] | date: 'HH:mm'}} - {{curso.horasDeSalida[i] | date: 'HH:mm'}}
           </div>
         </td>
       </tr>

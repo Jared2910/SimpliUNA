@@ -2,17 +2,19 @@
 
 <app-agregar-curso-dialog></app-agregar-curso-dialog>
 
-<p-table [value]="this.cursosRegistrados.cursos"
+<p-table 
+  [value]="this.cursosRegistrados.cursos"
+  [rowHover]="true"
+  [scrollable]="true"
+  [columns]="cols"
+  [resizableColumns]="true" 
+  columnResizeMode="expand"
   styleClass="p-datatable-striped shadow-5 animate__animated animate__fadeIn">
   <ng-template pTemplate="header">
     <tr>
-      <th>NRC</th>
-      <th>Curso</th>
-      <th>Código</th>
-      <th>Profesor</th>
-      <th>Dias</th>
-      <th>Horario</th>
-      <th style="width: 5rem"></th>
+      <th *ngFor="let col of cols" [style]="col.style">
+        {{col.header}}
+      </th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-curso>
